@@ -1,0 +1,10 @@
+VAR a,x,y,z : LOGICAL;
+BEGIN
+a = 1;
+y = a .AND. 0;
+x = y .OR. a .AND. 1;
+READ(a);
+WRITE(x);
+REPEAT
+x = x .IMP. a;
+END

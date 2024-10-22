@@ -51,26 +51,32 @@ public class LexicalAnalyzer {
                 tokens.add(String.valueOf(c));  // Добавляем разделитель как отдельную лексему
                 token.setLength(0);
             }
-            // Обработка операторов
-            else if (operators.contains(c)) {
-                addToken(token.toString(), tokens);
-                tokens.add(String.valueOf(c));  // Добавляем оператор как отдельную лексему
-                token.setLength(0);
-            }
-            // Обработка логических операторов
-            else if (i + 4 <= code.length() && logicalOperators.contains(code.substring(i, i + 4))) {
-                addToken(token.toString(), tokens);
-                tokens.add(code.substring(i, i + 4));  // Добавляем оператор как отдельную лексему
-                i += 3;  // Продвигаем указатель для обработки оператора
-                token.setLength(0);
-            }
-            // Обработка унарных операторов
-            else if (i + 4 <= code.length() && unOperators.contains(code.substring(i, i + 4))) {
-                addToken(token.toString(), tokens);
-                tokens.add(code.substring(i, i + 4));  // Добавляем оператор как отдельную лексему
-                i += 3;  // Продвигаем указатель для обработки оператора
-                token.setLength(0);
-            } else {
+//            // Обработка операторов
+//            else if (operators.contains(c)) {
+//                addToken(token.toString(), tokens);
+//                tokens.add(String.valueOf(c));  // Добавляем оператор как отдельную лексему
+//                token.setLength(0);
+//            }
+//            // Обработка логических операторов
+//            else if (i + 4 <= code.length() && logicalOperators.contains(code.substring(i, i + 4))) {
+//                addToken(token.toString(), tokens);
+//                tokens.add(code.substring(i, i + 4));  // Добавляем оператор как отдельную лексему
+//                i += 3;  // Продвигаем указатель для обработки оператора
+//                token.setLength(0);
+//            }
+//            // Обработка унарных операторов
+//            else if ((i + 4 <= code.length() && unOperators.contains(code.substring(i, i + 4)))) {
+//                addToken(token.toString(), tokens);
+//                tokens.add(code.substring(i, i + 4));  // Добавляем оператор как отдельную лексему
+//                i += 3;  // Продвигаем указатель для обработки оператора
+//                token.setLength(0);
+//            }else if ((i + 5 <= code.length() && unOperators.contains(code.substring(i, i + 5)))) {
+//                addToken(token.toString(), tokens);
+//                tokens.add(code.substring(i, i + 5));  // Добавляем оператор как отдельную лексему
+//                i += 4;  // Продвигаем указатель для обработки оператора
+//                token.setLength(0);
+//            }
+            else {
                 token.append(c);
             }
         }

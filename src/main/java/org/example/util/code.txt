@@ -1,11 +1,6 @@
 VAR a,x,y,z : LOGICAL;
 BEGIN
 a = 1;
-y = .NOT.(0);
-WRITE(x);
-REPEAT
-WRITE(a);
-a = .NOT.(a);
-UNTIL a = 1;
 x = x .IMP. a;
+y = .NOT.(0);
 END

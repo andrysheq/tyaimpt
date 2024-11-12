@@ -4,16 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SyntaxTreeNode {
-    private String value;  // The token or non-terminal value
-    private List<SyntaxTreeNode> children;  // List of child nodes
+    private String value;
+    private List<SyntaxTreeNode> children;
 
     public SyntaxTreeNode(String value) {
         this.value = value;
         this.children = new ArrayList<>();
-    }
-
-    public void addChild(SyntaxTreeNode child) {
-        this.children.add(child);
     }
 
     public String getValue() {
@@ -24,8 +20,20 @@ public class SyntaxTreeNode {
         return children;
     }
 
+    public void addChild(SyntaxTreeNode child) {
+        children.add(child);
+    }
+
     @Override
     public String toString() {
-        return value;
+        return toString(0);
+    }
+
+    private String toString(int level) {
+        StringBuilder sb = new StringBuilder("  ".repeat(level) + value + "\n");
+        for (SyntaxTreeNode child : children) {
+            sb.append(child.toString(level + 1));
+        }
+        return sb.toString();
     }
 }

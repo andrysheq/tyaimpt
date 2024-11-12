@@ -1,7 +1,7 @@
 package org.example;
 
+import org.example.util.BottomUpSyntaxAnalyzer;
 import org.example.util.LexicalAnalyzer;
-import org.example.util.SyntaxAnalyzer;
 import org.example.util.SyntaxTreeNode;
 
 import java.io.IOException;
@@ -12,7 +12,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         try {
-            String code = new String(Files.readAllBytes(Paths.get("C:\\у(ч)ёба\\3 курс\\ТЯП\\tyaimpt\\src\\main\\java\\org\\example\\util\\code.txt")));
+            String code = new String(Files.readAllBytes(Paths.get("src/main/java/org/example/util/code.txt")));
             List<String> tokens = LexicalAnalyzer.tokenize(code);
 
             // Классификация и вывод лексем
@@ -21,7 +21,7 @@ public class Main {
             }
 
             // Создание синтаксического анализатора и построение дерева
-            SyntaxAnalyzer syntaxAnalyzer = new SyntaxAnalyzer(tokens);
+            BottomUpSyntaxAnalyzer syntaxAnalyzer = new BottomUpSyntaxAnalyzer(tokens);
             SyntaxTreeNode syntaxTree = syntaxAnalyzer.parse();
 
             // Вывод дерева

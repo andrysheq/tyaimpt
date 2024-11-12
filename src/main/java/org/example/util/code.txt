@@ -1,10 +1,11 @@
 VAR a,x,y,z : LOGICAL;
 BEGIN
 a = 1;
-y = a .AND. 0;
-x = y .OR. a .AND. 1;
-READ(a);
+y = .NOT.(0);
 WRITE(x);
 REPEAT
+WRITE(a);
+a = .NOT.(a);
+UNTIL a = 1;
 x = x .IMP. a;
 END

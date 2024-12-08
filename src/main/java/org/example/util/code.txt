@@ -1,6 +1,16 @@
-VAR a,x,y,z : LOGICAL;
+VAR a,x,y,z,e : LOGICAL;
 BEGIN
-a = 1;
-x = .NOT.(x .IMP. a) .OR. (a .AND. 1);
+a = 0;
+e = 0 .OR. .NOT.(0);
 y = .NOT.(0);
+READ(y);
+REPEAT
+    x = .NOT. (a);
+    WRITE(x);
+    a = a .OR. 1;
+UNTIL a .AND. 1;
+WRITE(a);
+WRITE(x);
+WRITE(y);
+WRITE(e);
 END

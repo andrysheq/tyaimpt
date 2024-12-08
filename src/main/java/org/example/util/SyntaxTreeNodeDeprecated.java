@@ -3,11 +3,11 @@ package org.example.util;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SyntaxTreeNode {
+public class SyntaxTreeNodeDeprecated {
     private String value;
-    private List<SyntaxTreeNode> children;
+    private List<SyntaxTreeNodeDeprecated> children;
 
-    public SyntaxTreeNode(String value) {
+    public SyntaxTreeNodeDeprecated(String value) {
         this.value = value;
         this.children = new ArrayList<>();
     }
@@ -16,11 +16,11 @@ public class SyntaxTreeNode {
         return value;
     }
 
-    public List<SyntaxTreeNode> getChildren() {
+    public List<SyntaxTreeNodeDeprecated> getChildren() {
         return children;
     }
 
-    public void addChild(SyntaxTreeNode child) {
+    public void addChild(SyntaxTreeNodeDeprecated child) {
         children.add(child);
     }
 
@@ -31,7 +31,7 @@ public class SyntaxTreeNode {
 
     private String toString(int level) {
         StringBuilder sb = new StringBuilder("  ".repeat(level) + value + "\n");
-        for (SyntaxTreeNode child : children) {
+        for (SyntaxTreeNodeDeprecated child : children) {
             sb.append(child.toString(level + 1));
         }
         return sb.toString();

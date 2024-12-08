@@ -1,6 +1,6 @@
 VAR a,x,y,z : LOGICAL;
 BEGIN
 a = 1;
-x = x .IMP. a;
+x = .NOT.(x .IMP. a) .OR. (a .AND. 1);
 y = .NOT.(0);
 END

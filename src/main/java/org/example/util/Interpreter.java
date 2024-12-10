@@ -11,7 +11,7 @@ public class Interpreter {
         this.tokensWithLines = tokensWithLines;
     }
 
-    public void run() {
+    public void interpret() {
         try {
             parseProgram();
             System.out.println("Код выполнен успешно.");

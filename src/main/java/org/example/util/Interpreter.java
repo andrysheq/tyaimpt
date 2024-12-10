@@ -130,10 +130,9 @@ public class Interpreter {
 
         int value = parseLogicalExpression();
 
-        // Проверка на null перед присваиванием
-//        if (variables.get(variable) == null) {
-//            throwError("Переменная '" + variable + "' имеет значение null и не может быть использована в операции.");
-//        }
+        if (value != 0 && value != 1) {
+            throwError("Ожидалось логическое значение (0 или 1), но получено: " + value);
+        }
 
         variables.put(variable, value);
     }
